@@ -208,7 +208,7 @@ const Label = styled.label`
 `
 
 const CustomTextArea = styled((props) => <Textarea {...props} />)`
-  background: ${({ theme }) => theme.white};
+  background: ${({ theme }) => theme.white} !important;
 `
 
 const TitleForm = styled.p`

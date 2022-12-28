@@ -65,9 +65,11 @@ export const ArticleBlog = () => {
       <ContentBlog>
         {dataBlog?.map((el, id) => (
           <Item key={el.id}>
-            <ImageBlog src={el.image} priority alt="blog" />
-            <ItemTitle>{el.title}</ItemTitle>
-            <ItemDesc>{el.desc}</ItemDesc>
+            <WrapHero>
+              <ImageBlog src={el.image} priority alt="blog" />
+              <ItemTitle>{el.title}</ItemTitle>
+              <ItemDesc>{el.desc}</ItemDesc>
+            </WrapHero>
             <WrapInfo onClick={() => openArticle(id)}>
               <InfoText>Read article</InfoText>
               <ArrowIcon fill={extra_red} />
@@ -222,4 +224,8 @@ const PageNumber = styled.p<PaginationStyled>`
   text-transform: uppercase;
   color: ${({ active, theme }) => (active ? theme.white : theme.black)};
   transition: 0.4s ease all;
+`
+
+const WrapHero = styled.div`
+  height: 100%;
 `

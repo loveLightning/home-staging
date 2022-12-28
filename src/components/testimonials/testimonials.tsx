@@ -85,6 +85,6 @@ const ImageSilder = styled(ImageReview)``
 
 const MySwiperSlide = styled((props) => <SwiperSlide {...props} />)`
   @media ${device.laptopS} {
-    display: ${({ remove }) => (remove ? 'none' : '')};
+    display: ${({ remove }) => (remove ? 'none' : '')}!important;
   }
 `

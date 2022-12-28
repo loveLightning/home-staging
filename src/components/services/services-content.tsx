@@ -176,6 +176,9 @@ const WrapTitle = styled.div`
 
 const Blocks = styled.div`
   margin-bottom: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
   @media ${device.laptopS} {
     display: flex;
     flex-direction: column;

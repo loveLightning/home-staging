@@ -89,7 +89,7 @@ export const FooterInfo = () => {
         </Formik>
       </Subscribe>
 
-      <CustomLine />
+      <CustomLine order />
 
       <BlockList>
         <WrapperFeedback indent>
@@ -198,6 +198,7 @@ const Subscribe = styled.div`
     margin: auto;
     max-width: 720px;
     width: 100%;
+    order: 3;
   }
 `
 
@@ -298,6 +299,7 @@ const CustomLine = styled((props) => <Line {...props} />)`
   display: none;
   @media ${device.laptopL} {
     display: flex;
+    order: ${({ order }) => order && '2'};
   }
 `
 

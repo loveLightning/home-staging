@@ -8,6 +8,7 @@ import { device } from 'src/utils'
 
 import kingKitchen from '../../../public/images/home-staging/king-kitchen.png'
 import qaImage from '../../../public/images/home-staging/qa.png'
+import smallVideo from '../../../public/images/home-staging/small-sofa.png'
 import imageVideo from '../../../public/images/home-staging/video-image.png'
 import { dataDropdown, dataImages, secondDataImages } from './types'
 
@@ -49,7 +50,8 @@ export const ContentHomeStaging = () => {
       </WrapDesc>
 
       <WrapperImage>
-        <ImageVideo src={imageVideo} alt="team img" />
+        <ImageVideo src={imageVideo} alt="img" />
+        <SmallVideo src={smallVideo} alt="img" />
         <CustomPlayIcon />
       </WrapperImage>
 
@@ -175,6 +177,18 @@ const CustomPlayIcon = styled(PlayIcon)`
 const ImageVideo = styled(Image)`
   width: 100%;
   height: auto;
+  @media ${device.tablet} {
+    display: none;
+  }
+`
+
+const SmallVideo = styled(Image)`
+  display: none;
+  @media ${device.tablet} {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 `
 
 const Wrapper = styled.div`

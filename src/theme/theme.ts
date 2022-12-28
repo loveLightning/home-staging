@@ -44,14 +44,14 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
   .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    /* display: none;
+    display: none;
     @media ${device.tablet} {
       background: white;
       border-radius: 3px;
       width: 60px;
       height: 2px;
       display: inline-block;
-    } */
+    }
   }
 
   .css-b62m3t-container {

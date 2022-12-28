@@ -100,7 +100,7 @@ const Title = styled.h2`
     font-size: 45px;
   }
   @media ${device.mobileXS} {
-    font-size: 40px;
+    font-size: 35px;
   }
 `
 

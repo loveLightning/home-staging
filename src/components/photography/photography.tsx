@@ -73,6 +73,9 @@ const Desc = styled.p`
   color: ${({ theme }) => theme.grey};
   margin-top: 10px;
   height: 66px;
+  @media ${device.laptopS} {
+    height: auto;
+  }
 `
 
 const WrapperInfo = styled.div`
@@ -82,7 +85,7 @@ const WrapperInfo = styled.div`
   margin-top: 42px;
   cursor: pointer;
   @media ${device.laptopS} {
-    padding: 46px 0 50px;
+    padding: 20px 0 30px;
     margin: 0;
   }
 `

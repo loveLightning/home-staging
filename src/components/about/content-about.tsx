@@ -26,9 +26,9 @@ export const ContentAbout = () => {
     <>
       <Container>
         <WrapTitle>
-          <CustomTitle>
+          <Title color={black}>
             Professional Home Staging And Real Estate Photography
-          </CustomTitle>
+          </Title>
         </WrapTitle>
         <Separator />
         <WrapDesc>
@@ -117,9 +117,6 @@ export const ContentAbout = () => {
   )
 }
 
-const CustomTitle = styled((props) => <Title {...props} />)`
-  color: ${({ theme }) => theme.black};
-`
 const WrapTitle = styled.div`
   max-width: 1586px;
   margin: 110px auto 0;

@@ -101,7 +101,7 @@ const WrapTitle = styled.div`
 `
 
 const CustomTitle = styled((props) => <Title {...props} />)`
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.black} !important;
 `
 
 const WrapDesc = styled.div`
