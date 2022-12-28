@@ -143,7 +143,7 @@ const CustomSearchIcon = styled((props) => <SearchIcon {...props} />)`
 
 const CustomInput = styled((props) => <Input {...props} />)`
   width: 100%;
-  padding-left: 50px;
+  padding-left: 50px !important;
   border: ${({ theme }) => theme.btn_disabled} 1px solid;
 `
 

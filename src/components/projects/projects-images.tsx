@@ -20,7 +20,9 @@ export const ProjectsImages = () => {
   const [pageNumber, setPageNUmber] =
     useState<PaginationTypes[]>(dataPagination)
 
-  const activeHandler = (id: number) => {
+  const [activeBlock, setActiveBlock] = useState('All Projects')
+
+  const activeHandler = (id: number, title: string) => {
     setData((prev) => {
       const newState = prev.map((el) => {
         if (el.id === id) {
@@ -32,6 +34,7 @@ export const ProjectsImages = () => {
 
       return newState
     })
+    setActiveBlock(title)
   }
 
   const changePage = (id: number) => {
@@ -69,7 +72,7 @@ export const ProjectsImages = () => {
       <WrapeprButtons>
         {data?.map((el) => (
           <Button
-            onClick={() => activeHandler(el.id)}
+            onClick={() => activeHandler(el.id, el.title)}
             key={el.id}
             active={el.active}>
             {el.title}
@@ -77,9 +80,31 @@ export const ProjectsImages = () => {
         ))}
       </WrapeprButtons>
       <WrapImages>
-        {dataImages?.map((el) => (
-          <ImageProject src={el.image} key={el.id} alt="image project" />
-        ))}
+        {dataImages?.map((el) => {
+          if (activeBlock.toLowerCase() === 'All Projects'.toLowerCase()) {
+            return (
+              <WrapImg key={el.id}>
+                <ImageProject
+                  title={el.type}
+                  src={el.image}
+                  alt="image project"
+                />
+                <TextInImage>{el.type}</TextInImage>
+              </WrapImg>
+            )
+          } else if (el.type.toLowerCase() === activeBlock.toLowerCase()) {
+            return (
+              <WrapImg key={el.id}>
+                <ImageProject
+                  title={el.type}
+                  src={el.image}
+                  alt="image project"
+                />
+                <TextInImage>{el.type}</TextInImage>
+              </WrapImg>
+            )
+          }
+        })}
       </WrapImages>
       <Pagination>
         {pageNumber?.map((el, id) => (
@@ -201,8 +226,40 @@ const WrapImages = styled.div`
     grid-template-columns: 1fr;
   }
 `
+const TextInImage = styled.p`
+  color: ${({ theme }) => theme.extra_red};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  transition: 0.4s ease all;
+  opacity: 0;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+`
 
 const ImageProject = styled(Image)`
   width: 100%;
   height: auto;
+  transition: 0.8s ease all;
+  position: relative;
+
+  &:hover {
+    opacity: 0.2;
+    transform: scale(1.2);
+  }
+`
+
+const WrapImg = styled.div`
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: 0.4s ease all;
+  cursor: pointer;
+
+  &:hover ${TextInImage} {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 `

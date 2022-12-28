@@ -5,11 +5,12 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 import { Button, ErrorMessage, Field, Input, Line } from 'src/components'
-import { AnyNetworkIcon, FacebookIcon, TwitterIcon } from 'src/icons'
+import { AnyNetworkIcon, FacebookIcon } from 'src/icons'
 import { footerEmailSchema } from 'src/schemas'
 import { device } from 'src/utils'
 
 import logo from '../../../public/images/logo.svg'
+import twitter from '../../../public/images/twitter.svg'
 import { menuItems } from '../header'
 
 interface ValuesTypes {
@@ -89,7 +90,7 @@ export const FooterInfo = () => {
         </Formik>
       </Subscribe>
 
-      <CustomLine order />
+      <CustomLine order="true" />
 
       <BlockList>
         <WrapperFeedback indent>
@@ -121,7 +122,7 @@ export const FooterInfo = () => {
               <AnyNetworkIcon />
             </SocialNetwork>
             <SocialNetwork href="/">
-              <TwitterIcon />
+              <Image src={twitter} alt="twitter" />
             </SocialNetwork>
           </WrapeprSocialNetwork>
         </WrapperFeedback>

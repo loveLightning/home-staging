@@ -101,6 +101,8 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     object-fit: cover;
   }
-
+  .swiper-wrapper {
+    align-items: center;
+  }
   
 `
